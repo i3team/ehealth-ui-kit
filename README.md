@@ -2,6 +2,7 @@
 
 ### Getting started
 - Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
+- Các component của prop là options thì mặc định, options là array của object có shape là {label, value}
 
 ### EHealthButton
 ##### Props
@@ -28,7 +29,7 @@ Name | Type | Default | Description
 `value` | string or number |  | native input value
 `onChange` | func | | native input onChange
 `error` | bool | false | true thì sẽ chuyển thành màu đỏ và hiển thị description (nếu có)
-`errorDescription` | string | | description đưojc hiển thị nếu `error == true``
+`errorDescription` | string | | description đưojc hiển thị nếu `error == true`
 `iconClassName` | string fontawesome | | icon
 `label` | string | |
 `width` | string | | width của textfield nếu cần
@@ -77,6 +78,7 @@ Name | Type | Default | Description
 :--- | :--- | :--- | :---
 `debounce` | bool | true | `onChange` được invoke sau khi dừng nhập một khoảng (350ms)
 `onChange`| func | | Khác với `onChange` của input thông thường, `onChange` của Searchbox có parameter là text, không phải event.
+`margin` | | | 
 Và các props khác của `EHealthTextField` (không bao gồm `value`)
 
 ##### Code
@@ -101,6 +103,7 @@ Name | Type | Default | Description
 `margin` | | | 
 `iconClassName` | | | 
 `onDelete` | func |  | nếu truyền function này thì sẽ hiện dấu "X" 
+`margin` | | | 
 
 ##### Code
 ```jsx
@@ -134,6 +137,7 @@ Name | Type | Default | Description
 `options` | array | | list of object of {label, value}
 `value` | array or object | | array nếu multiple, ngược lại
 `noOptionText` | string | `"No options"` | text display khi không có options
+`margin` | | | 
 
 ##### Code
 ```jsx
@@ -176,6 +180,37 @@ import AsyncDropdown from "~/components/ui-kit/dropdown/AsyncDropdown";
 	}}
 	label="Select multiple"
 	multiple
+/>
+```
+
+### EHealthCheckboxGroup
+Checkbox list
+
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`value`* | array or string/number |  | array nếu `isMulti == true`
+`options`* | array | | 
+`onChange`* | func | | callback function với param là array nếu `isMulti == true` (như prop `value`)
+`isMulti` | bool | `false` | 
+`margin` | | | 
+
+##### Code
+```jsx
+<EHealthCheckboxGroup
+	options={options}
+	value={testValue}
+	onChange={e => {
+		this.updateObject(this.props.data, { testValue: e });
+	}}
+/>
+<EHealthCheckboxGroup
+	options={options}
+	isMulti
+	value={testValues}
+	onChange={e => {
+		this.updateObject(this.props.data, { testValues: e });
+	}}
 />
 ```
 
