@@ -76,7 +76,7 @@ Về cơ bản không khác gì một component text field, ngoài việc:
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
 `debounce` | bool | true | `onChange` được invoke sau khi dừng nhập một khoảng (350ms)
-
+`onChange`| func | | Khác với `onChange` của input thông thường, `onChange` của Searchbox có parameter là text, không phải event.
 Và các props khác của `EHealthTextField` (không bao gồm `value`)
 
 ##### Code
@@ -89,6 +89,35 @@ Và các props khác của `EHealthTextField` (không bao gồm `value`)
 	onChange={text => {
 		console.log(text);
 	}}
+/>
+```
+
+### Tag
+
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`label` | string | | 
+`margin` | | | 
+`iconClassName` | | | 
+`onDelete` | func |  | nếu truyền function này thì sẽ hiện dấu "X" 
+
+##### Code
+```jsx
+<Tag
+	margin="sm"
+	label="Tag without icon"
+/>
+<Tag
+	margin="sm"
+	iconClassName="far fa-calendar-day"
+	label="Tag with icon"
+/>
+<Tag
+	margin="sm"
+	onDelete={() => { }}
+	iconClassName="far fa-calendar-day"
+	label="Tag with icon and delete"
 />
 ```
 
