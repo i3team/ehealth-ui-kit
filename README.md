@@ -66,4 +66,30 @@ Và các props còn lại của native input
 />
 ```
 
+### Searchbox
+Về cơ bản không khác gì một component text field, ngoài việc:
+- Có UI dành cho việc search 
+- Có thêm chức năng debounce
+- Không nhận prop `value` như input thông thường, chỉ cần `onChange`
+
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`debounce` | bool | true | `onChange` được invoke sau khi dừng nhập một khoảng (350ms)
+
+Và các props khác của `EHealthTextField` (không bao gồm `value`)
+
+##### Code
+```jsx
+<Searchbox
+	margin="sm"
+	width="420px"
+	debounce
+	placeholder="Debounced search box"
+	onChange={text => {
+		console.log(text);
+	}}
+/>
+```
+
 
