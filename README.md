@@ -121,4 +121,60 @@ Name | Type | Default | Description
 />
 ```
 
+### Dropdown / AsyncDropdown 
+#### Dropdown - sử dụng để select khi đã có options
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`renderOption` | function | `option => option.label;` | Render label
+`onChange` | function | | callback function khi change, parameter là list khi `multiple == true`, object khi `multiple == false`
+`search` | boolean | `false` | `true` nếu cần filter options
+`multiple` | boolean | `false` |
+`label` | string | `"Select"` | Label (placeholder)
+`options` | array | | list of object of {label, value}
+`value` | array or object | | array nếu multiple, ngược lại
+`noOptionText` | string | `"No options"` | text display khi không có options
+
+##### Code
+```jsx
+import Dropdown from "~/components/ui-kit/dropdown/EHealthSelect";
+<Dropdown
+	placeholder="Select ..."
+	margin="sm"
+	options={options}
+	value={options.filter(opt => testValues.some(i => opt.value == i))}
+	onChange={values => {
+		this.overwriteList(this.props.data.testValues, values.map(i => i.value))
+	}}
+	label="Select multiple"
+	multiple
+/>
+```
+
+#### AsyncDropdown - sử dụng để select query từ back-end
+##### Props
+Bao gồm props của `EHealthSelect` và:
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`getValue` | function | | lấy value cho select dựa vào options, xem VD dưới
+`getInit` | boolean | `false` | `true` nếu cần lấy sẵn options 
+`apiUrl`* | string | | api query options từ back-end, được nối vào với searchValue, xem VD dưới
+`extractOptionsFromApi`* | function | | Trích xuất options từ `ack`, xem VD dưới
+
+##### Code
+```jsx
+import EHealthSelectAsync from "~/components/ui-kit/dropdown/AsyncDropdown";
+<AsyncDropdown
+	placeholder="Select ..."
+	margin="sm"
+	apiUrl="/api/Doctor/GetCLSOptions?searchValue="
+	extractOptionsFromApi={ack => ack.data.items}
+	getValue={options => options.filter(opt => testValues.some(i => opt.value == i))}
+	onChange={values => {
+		this.overwriteList(this.props.data.testValues, values.map(i => i.value))
+	}}
+	label="Select multiple"
+	multiple
+/>
+```
 
