@@ -38,7 +38,7 @@ Name | Type | Default | Description
 Và các props còn lại của native input
 
 ##### Code
-`jsx
+```jsx
 <EHealthTextField
 	margin="sm"
 	width="250px"
