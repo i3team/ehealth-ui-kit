@@ -153,7 +153,6 @@ import Dropdown from "~/components/ui-kit/dropdown/EHealthSelect";
 
 #### AsyncDropdown - sử dụng để select query từ back-end
 ##### Props
-Bao gồm props của `EHealthSelect` và:
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
 `getValue` | function | | lấy value cho select dựa vào options, xem VD dưới
@@ -161,9 +160,11 @@ Name | Type | Default | Description
 `apiUrl`* | string | | api query options từ back-end, được nối vào với searchValue, xem VD dưới
 `extractOptionsFromApi`* | function | | Trích xuất options từ `ack`, xem VD dưới
 
+và các props khác của `Dropdown`
+
 ##### Code
 ```jsx
-import EHealthSelectAsync from "~/components/ui-kit/dropdown/AsyncDropdown";
+import AsyncDropdown from "~/components/ui-kit/dropdown/AsyncDropdown";
 <AsyncDropdown
 	placeholder="Select ..."
 	margin="sm"
