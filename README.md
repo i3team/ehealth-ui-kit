@@ -213,4 +213,89 @@ Name | Type | Default | Description
 	}}
 />
 ```
+### EHealthTabContainer / EHealthTab
+#### Code
+// primary tab
+<EHealthTabContainer
+	primary={true}
+	value={tabValue}
+	onChange={newValue => {
+		this.setState({ tabValue: newValue })
+	}}
+>
+	<EHealthTab label="Tab 1" />
+	<EHealthTab label="Tab 2" />
+	<EHealthTab label="Tab 3" />
+	<EHealthTab label="Tab 4" />
+	<EHealthTab label="Tab 5" />
+</EHealthTabContainer>
 
+// secondary tab
+<EHealthTabContainer
+	primary={false}
+	value={tabValue}
+	onChange={newValue => {
+		this.setState({ tabValue: newValue })
+	}}
+>
+	<EHealthTab label="Tab 1" value={11} iconClassName="far fa-calendar-day" />
+	<EHealthTab label="Tab 2" value={21} />
+	<EHealthTab label="Tab 3" value={56} iconClassName="far fa-calendar-day" />
+	<EHealthTab label="Tab 4" value={34} />
+	<EHealthTab label="Tab 5" value={65} />
+</EHealthTabContainer>
+
+#### Props
+##### EHealthTabContainer
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`primary` | bool | true | 
+`margin` | | | 
+`value` | any | | giá trị của tab đang được active
+`onChange` | func | |
+
+##### EHealthTab
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`label` | string |  | label của tab
+`value` | any | index của tab (starts from zero) | giá trị của tab
+`iconClassName` | string | | icon bên trái của tab (hiện chỉ có tab secondary mới có icon, tức primary sẽ ignore icon)
+
+#### Ví dụ về một trường hợp sử dụng tab cơ bản
+```jsx
+_renderTabs = () => {
+    let { tabValue } = this.state;
+    switch (tabValue) {
+        case 0:
+            return <Tab1Content />
+        case 1:
+            return <Tab2Content />
+        case 2:
+            return <Tab3Content />
+        default: 
+            throw "Invalid tab value";
+    }
+}
+
+render(){
+    return (
+        <Fragment>
+            <div>
+                <EHealthTabContainer
+                    value={tabValue}
+                    onChange={newValue => {
+                        this.setState({ tabValue: newValue })
+                    }}
+                >
+                    <EHealthTab label="Tab 1" />
+                    <EHealthTab label="Tab 2" />
+                    <EHealthTab label="Tab 3" />
+                </EHealthTabContainer>
+            </div>
+            <div>
+                {this._renderTabs()}
+            </div>
+        </Fragment>
+    )
+}
+```
