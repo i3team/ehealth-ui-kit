@@ -215,6 +215,7 @@ Name | Type | Default | Description
 ```
 ### EHealthTabContainer / EHealthTab
 #### Code
+```jsx
 // primary tab
 <EHealthTabContainer
 	primary={true}
@@ -244,7 +245,7 @@ Name | Type | Default | Description
 	<EHealthTab label="Tab 4" value={34} />
 	<EHealthTab label="Tab 5" value={65} />
 </EHealthTabContainer>
-
+```
 #### Props
 ##### EHealthTabContainer
 Name | Type | Default | Description
