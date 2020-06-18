@@ -300,3 +300,6 @@ render(){
     )
 }
 ```
+
+### EHealthSwitch
+Xem [Switch](https://material-ui.com/api/switch/) của [Material-UI](https://material-ui.com/)
