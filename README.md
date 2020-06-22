@@ -301,6 +301,74 @@ render(){
     )
 }
 ```
+### IconfulSelectItems
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`selected` | Boolean |  false | Có chọn hay không
+`onSelect` | Function | | Hàm handle khi selec, trả về option.value và e
+`iconClassName` | string | "fad fa-question-circle" | Class name của icon
+`iconSelectedClassName` | string | "far fa-check" | Class name của icon khi selected
+`iconColor` | string | "yellow7" | Màu của icon
+`color` | string | "yellow7" | Màu nền khi chưa được chọn
+`selectedColor` | string | "primary1"  | Màu nền khi được chọn
+`borderColor` | string | "grey2" | Màu của border
+`borderSelectedColor` | string | "primary3" | Màu của border khi được chọn
+
+Và các props còn lại của I3Div
+
+##### Code
+```jsx
+<IconfulSelectItem
+              selected={
+                multiple
+                  ? value.some((v) => v === option.value)
+                  : value === option.value
+              }
+              disabled={option.disabled || disabled}
+              onSelect={(e) => {
+                this._onSelect(option, e);
+              }}
+              iconClassName={option.iconClassName}
+              {...selectItemProps}
+              key={option.value}
+            >
+              {option.label}
+            </IconfulSelectItem>
+```
+
+### IconfulSelect
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`options` | Array of IconfulSelectModel or similar model |  | Dữ liệu cho select
+`onChange` | Function | |Hàm handle khi chọn trả về option.value
+`disabled` | Boolean | false | Disabled or not
+`value` | any | | Truyền vào value hoặc mảng value được chọn
+`multiple` | Boolean | false | có multi select hay không
+`selectItemProps` | object |  | Các props truyền cho IconfulSelectItems
+`direction` | "horizontal" hoặc "vertical" | "horizontal" | Hướng của select
+
+Và các props còn lại của I3Div
+
+##### Code
+```jsx
+<IconfulSelect
+          options={options}
+          value={value1}
+          direction="vertical"
+          disabled={true}
+          onChange={this._onChange1}
+          multiple
+          selectItemProps={{
+            width: "100px",
+            color: "yellow1",
+            selectedColor: "yellow9",
+            iconColor: "green7",
+          }}
+        />
+```
+
 
 ### EHealthSwitch
 Xem [Switch](https://material-ui.com/api/switch/) của [Material-UI](https://material-ui.com/)
