@@ -385,7 +385,7 @@ Name | Type | Default | Description
 `haveIcon` | boolean | true | 
 `degreeRotate` | number | 90 | độ quay của icon khi đóng mở
 `expandDuration` | number | 200  | thời gian quay của icon và thời gian mở đóng của children
-`iconRotatable` | boolean |  | icon có quay khi đóng mở hay không
+`iconRotatable` | boolean | false  | icon có quay khi đóng mở hay không
 `onClick` | func |  | khi click vào item function(e){}
 `onChangeCheckBox` | func |  | khi click vào checkbox function(e){}
 
