@@ -375,17 +375,19 @@ Name | Type | Default | Description
 :--- | :--- | :--- | :---
 `color` | string |  "primary5" | Màu chữ
 `hoverColor` | string | "primary1" | Màu khi hover
+`haveIcon` | boolean | true | 
 `expandIconClassName` | "string" | "far fa-chevron-down" | Class name của icon khi expanded
 `collapseIconClassName` | "string" | "far fa-chevron-down" | Class name của icon collapsed
 `label` | string |  | Title của item
 `disabled` | boolean| false  | 
 `expand` | boolean |  | 
-`checked` | boolean |  |  
+`defaultExpand` | boolean | false |  
 `haveCheckBox` | boolean| true  | 
-`haveIcon` | boolean | true | 
+`checked` | boolean |  |  
+`defaultChecked` | boolean | false |
+`iconRotatable` | boolean | false  | icon có quay khi đóng mở hay không
 `degreeRotate` | number | 90 | độ quay của icon khi đóng mở
 `expandDuration` | number | 200  | thời gian quay của icon và thời gian mở đóng của children
-`iconRotatable` | boolean | false  | icon có quay khi đóng mở hay không
 `onClick` | func |  | khi click vào item function(e){}
 `onChangeCheckBox` | func |  | khi click vào checkbox function(e){}
 
