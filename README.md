@@ -369,6 +369,68 @@ Và các props còn lại của I3Div
         />
 ```
 
+### EHealthTreeViewItem
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`color` | string |  "primary5" | Màu chữ
+`hoverColor` | string | "primary1" | Màu khi hover
+`expandIconClassName` | "string" | "far fa-chevron-down" | Class name của icon khi expanded
+`collapseIconClassName` | "string" | "far fa-chevron-down" | Class name của icon collapsed
+`label` | string |  | Title của item
+`disabled` | boolean| false  | 
+`expand` | boolean |  | 
+`checked` | boolean |  |  
+`haveCheckBox` | boolean| true  | 
+`haveIcon` | boolean | true | 
+`degreeRotate` | number | 90 | độ quay của icon khi đóng mở
+`expandDuration` | number | 200  | thời gian quay của icon và thời gian mở đóng của children
+`iconRotatable` | boolean |  | icon có quay khi đóng mở hay không
+`onClick` | func |  | khi click vào item function(e){}
+`onChangeCheckBox` | func |  | khi click vào checkbox function(e){}
+
+
+Và các props còn lại của I3Div
+
+##### Code
+```jsx
+
+        <EHealthTreeViewItem label="item1">
+          <EHealthTreeViewItem label="item1.1"></EHealthTreeViewItem>
+          <EHealthTreeViewItem label="item1.2">
+            <EHealthTreeViewItem label="item1.2.1"></EHealthTreeViewItem>
+            <EHealthTreeViewItem label="item1.2.2"></EHealthTreeViewItem>
+          </EHealthTreeViewItem>
+        </EHealthTreeViewItem>
+```
+
+### EHealthTreeView
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`data` | object |  | 
+`disabled` | boolean | false | 
+`getLabel` |  | "far fa-chevron-down" | Class name của icon khi expanded
+`getExpanded` | func |  | function(item){} trả về boolean
+`getDisabled` | func |  | function(item){} trả về boolean
+`getChecked` | func |   | function(item){} trả về boolean
+`getChildrens` | func |  | function(item){} trả về Array children or underfied
+`onClick` | func |  | khi click vào item function(item,e){}
+`onChangeCheckBox` | func |  | khi click vào checkbox function(item,e){}
+
+Và các props còn lại của I3Div và EHealthTreeViewItem
+
+Lưu ý: Mặc định các trường disabled, checked, expand, childrens sẽ lấy theo các field tương ứng trong object item, Nếu muốn lấy khác thì sử dụng các hàm get tương ứng. Lưu ý dùng các field để render sẽ giúp hiệu năng tốt hơn.
+
+##### Code
+```jsx
+       <EHealthTreeView
+          data={data}
+          onChangeCheckBox={this._onChangeCheckBox}
+          onClick={this._onClick}
+          getChildrens={(d) => d.items}
+        />
+```
 
 ### EHealthSwitch
 Xem [Switch](https://material-ui.com/api/switch/) của [Material-UI](https://material-ui.com/)
