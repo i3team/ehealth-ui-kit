@@ -312,8 +312,6 @@ Name | Type | Default | Description
 `iconColor` | string | "yellow7" | Màu của icon
 `color` | string | "yellow7" | Màu nền khi chưa được chọn
 `selectedColor` | string | "primary1"  | Màu nền khi được chọn
-`borderColor` | string | "grey2" | Màu của border
-`borderSelectedColor` | string | "primary3" | Màu của border khi được chọn
 
 Và các props còn lại của I3Div
 
