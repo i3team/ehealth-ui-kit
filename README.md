@@ -312,6 +312,7 @@ Name | Type | Default | Description
 `iconColor` | string | "yellow7" | Màu của icon
 `color` | string | "yellow7" | Màu nền khi chưa được chọn
 `selectedColor` | string | "primary1"  | Màu nền khi được chọn
+`minimal` | bool | false  | Kiểu Item, minimal of formal
 
 Và các props còn lại của I3Div
 
