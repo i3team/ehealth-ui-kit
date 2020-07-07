@@ -1,8 +1,7 @@
 # UI Kit cho EHealth VN
 
-### Categories
-- Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
-- Các component của prop là options thì mặc định, options là array của object có shape là {label, value}
+Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
+Các component của prop là `options` thì mặc định, `options` là `array` của object có shape là `{label, value}`
 
 ##### Danh sách
 - [EHealthButton](#ehealth-button)
@@ -14,7 +13,7 @@
 - [EHealthTabContainer/EHealthTab](#ehealth-tab)
 - [IconfulSelect/IconfulSelectItem](#iconful)
 - [EHealthTreeview/EHealthTreeviewItem](#treeview)
-
+- [EHealthSwitch](#switch)
 
 <a name="ehealth-button"/>
 
@@ -467,6 +466,8 @@ Lưu ý: Mặc định các trường disabled, checked, expand, childrens sẽ 
           getChildrens={(d) => d.items}
         />
 ```
+
+<a name="switch"/>
 
 ### EHealthSwitch
 Xem [Switch](https://material-ui.com/api/switch/) của [Material-UI](https://material-ui.com/)
