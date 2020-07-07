@@ -1,8 +1,13 @@
 # UI Kit cho EHealth VN
 
-### Getting started
+### Categories
 - Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
 - Các component của prop là options thì mặc định, options là array của object có shape là {label, value}
+
+##### Danh sách
+- [EHealthButton](#ehealth-button)
+
+<a name="ehealth-button"/>
 
 ### EHealthButton
 ##### Props
