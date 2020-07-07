@@ -498,5 +498,37 @@ Name | Type | Default | Description
 `noPadding`* | `boolean` | false | nếu ko cần padding ở body
 `children`* | | | nội dung timelineitembody
 
+#### Code
+```jsx
+import TimelineItem from "~/components/ui-kit/timeline/TimelineItem";
+import TimelineItemBody from "~/components/ui-kit/timeline/TimelineItemBody";
+<TimelineItem
+	color="primary"
+	badgeVariant="outlined"
+	title="Testing 1"
+	body={(
+		<Fragment>
+			<TimelineItemBody color="primary" time="15:30" description="Nguyễn Văn Bác Sĩ">
+				<div>Nội dung ở đây</div>
+			</TimelineItemBody>
+			<TimelineItemBody color="orange5" time="15:30" canDownload>
+				<div>Nội dung ở đây</div>
+			</TimelineItemBody>
+		</Fragment>
+	)}
+/>
+<TimelineItem
+	color="orange5"
+	title="Testing 2"
+	body={(
+		<Fragment>
+			<TimelineItemBody color="orange5" time="15:30" canDownload>
+				<div>Nội dung ở đây</div>
+			</TimelineItemBody>
+		</Fragment>
+	)}
+/>
+
+```
 
 
