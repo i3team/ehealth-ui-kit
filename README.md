@@ -1,9 +1,6 @@
 # UI Kit cho EHealth VN
 
-Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
-Các component của prop là `options` thì mặc định, `options` là `array` của object có shape là `{label, value}`
-
-##### Danh sách
+### Danh sách
 - [EHealthButton](#ehealth-button)
 - [EHealthTextField](#ehealth-textfield)
 - [Searchbox](#searchbox)
@@ -14,6 +11,10 @@ Các component của prop là `options` thì mặc định, `options` là `array
 - [IconfulSelect/IconfulSelectItem](#iconful)
 - [EHealthTreeview/EHealthTreeviewItem](#treeview)
 - [EHealthSwitch](#switch)
+- [TimelineItem/TimelineItemBody](#timeline)
+
+Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
+Các component của prop là `options` thì mặc định, `options` là `array` của object có shape là `{label, value}`
 
 <a name="ehealth-button"/>
 
@@ -471,3 +472,17 @@ Lưu ý: Mặc định các trường disabled, checked, expand, childrens sẽ 
 
 ### EHealthSwitch
 Xem [Switch](https://material-ui.com/api/switch/) của [Material-UI](https://material-ui.com/)
+
+<a name="timeline"/>
+
+### TimelineItem/TimelineItemBody
+
+#### TimelineItem
+### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`title`* | `node` or `string` or `number` | | 
+`body`* | `node` | | các `TimelineItemBody` được bọc trong `Fragment`
+`badgeVariant`* | `"solid"` or `"outlined"` | `"solid"` | |
+
+
