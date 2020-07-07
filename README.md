@@ -478,11 +478,25 @@ Xem [Switch](https://material-ui.com/api/switch/) của [Material-UI](https://ma
 ### TimelineItem/TimelineItemBody
 
 #### TimelineItem
-### Props
+##### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
 `title`* | `node` or `string` or `number` | | 
-`body`* | `node` | | các `TimelineItemBody` được bọc trong `Fragment`
-`badgeVariant`* | `"solid"` or `"outlined"` | `"solid"` | |
+`body`* | `node` | | 1 hoặc nhiều `TimelineItemBody` được bọc trong `Fragment`
+`badgeVariant`* | `"solid"` or `"outlined"` | `"solid"` | | 
+`color` | | |
+
+#### TimelineItemBody
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`time`* | `string` | | 
+`description` | `string` | | 
+`canDownload`* | `boolean` | `false` | hiện nút tải phiếu
+`onClickDownload` | `func` | | 
+`color`* | | | 
+`noPadding`* | `boolean` | false | nếu ko cần padding ở body
+`children`* | | | nội dung timelineitembody
+
 
 
