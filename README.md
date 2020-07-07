@@ -28,7 +28,7 @@ Và các props còn lại của native button
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
 `value` | string or number |  | native input value
-`onChange` | func | | native input onChange
+`onChange` | func | | onChange = (value)=>{} not (e)=>{}
 `error` | bool | false | true thì sẽ chuyển thành màu đỏ và hiển thị description (nếu có)
 `errorDescription` | string | | description đưojc hiển thị nếu `error == true`
 `iconClassName` | string fontawesome | | icon
