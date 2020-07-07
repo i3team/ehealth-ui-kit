@@ -411,7 +411,7 @@ Name | Type | Default | Description
 `hoverColor` | string | "primary1" | Màu khi hover
 `haveIcon` | boolean | true | 
 `expandIconClassName` | "string" | "far fa-chevron-down" | Class name của icon khi expanded
-`collapseIconClassName` | "string" | "far fa-chevron-down" | Class name của icon collapsed
+`collapseIconClassName` | "string" | "far fa-chevron-up" | Class name của icon collapsed
 `label` | string |  | Title của item
 `disabled` | boolean| false  | 
 `expand` | boolean |  | 
