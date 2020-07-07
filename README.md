@@ -6,6 +6,15 @@
 
 ##### Danh sách
 - [EHealthButton](#ehealth-button)
+- [EHealthTextField](#ehealth-textfield)
+- [Searchbox](#searchbox)
+- [Tag](#tag)
+- [Dropdown/AsyncDropdown](#dropdown)
+- [EHealthCheckboxGroup](#checkbox)
+- [EHealthTabContainer/EHealthTab](#ehealth-tab)
+- [IconfulSelect/IconfulSelectItem](#iconful)
+- [EHealthTreeview/EHealthTreeviewItem](#treeview)
+
 
 <a name="ehealth-button"/>
 
@@ -27,6 +36,7 @@ Và các props còn lại của native button
     Xuất viện
 </EHealthButton>
 ```
+<a name="ehealth-textfield"/>
 
 ### EHealthTextField
 ##### Props
@@ -73,6 +83,8 @@ Và các props còn lại của native input
 />
 ```
 
+<a name="searchbox"/>
+
 ### Searchbox
 Về cơ bản không khác gì một component text field, ngoài việc:
 - Có UI dành cho việc search 
@@ -99,6 +111,8 @@ Và các props khác của `EHealthTextField` (không bao gồm `value`)
 	}}
 />
 ```
+
+<a name="tag"/>
 
 ### Tag
 
@@ -129,6 +143,8 @@ Name | Type | Default | Description
 	label="Tag with icon and delete"
 />
 ```
+
+<a name="dropdown"/>
 
 ### Dropdown / AsyncDropdown 
 #### Dropdown - sử dụng để select khi đã có options
@@ -189,6 +205,8 @@ import AsyncDropdown from "~/components/ui-kit/dropdown/AsyncDropdown";
 />
 ```
 
+<a name="checkbox"/>
+
 ### EHealthCheckboxGroup
 Checkbox list
 
@@ -219,6 +237,9 @@ Name | Type | Default | Description
 	}}
 />
 ```
+
+<a name="ehealth-tab"/>
+
 ### EHealthTabContainer / EHealthTab
 #### Code
 ```jsx
@@ -306,7 +327,12 @@ render(){
     )
 }
 ```
-### IconfulSelectItems
+
+<a name="iconful"/>
+
+### IconfulSelect/IconfulSelectItem
+
+#### IconfulSelectItem
 ##### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
@@ -341,7 +367,7 @@ Và các props còn lại của I3Div
             </IconfulSelectItem>
 ```
 
-### IconfulSelect
+#### IconfulSelect
 ##### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
@@ -373,7 +399,11 @@ Và các props còn lại của I3Div
         />
 ```
 
-### EHealthTreeViewItem
+<a name="treeview"/>
+
+### EHealthTreeView/EHealthTreeViewItem
+
+#### EHealthTreeViewItem
 ##### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
@@ -410,7 +440,7 @@ Và các props còn lại của I3Div
         </EHealthTreeViewItem>
 ```
 
-### EHealthTreeView
+#### EHealthTreeView
 ##### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
