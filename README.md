@@ -12,6 +12,7 @@
 - [EHealthTreeview/EHealthTreeviewItem](#treeview)
 - [EHealthSwitch](#switch)
 - [TimelineItem/TimelineItemBody](#timeline)
+- [EHealthPanel](#ehealth-panel)
 
 Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
 Các component của prop là `options` thì mặc định, `options` là `array` của object có shape là `{label, value}`
@@ -531,4 +532,29 @@ import TimelineItemBody from "~/components/ui-kit/timeline/TimelineItemBody";
 
 ```
 
+<a name="ehealth-panel"/>
 
+### EHealthPanel
+
+#### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`time`* | string | | tiêu đề
+`rightAdornment` |  | | phần bên phải tiêu đề
+`children` | any | `false` | nội dung
+
+#### Code
+```jsx
+<EHealthPanel
+	title="hàng đợi"
+	rightAdornment={(
+		<div>
+			<I3Icon className="fal fa-expand-alt" />
+		</div>
+	)}
+>
+	<div>
+		nội dung
+	</div>
+</EHealthPanel>
+```
