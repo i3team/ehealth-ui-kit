@@ -52,6 +52,10 @@ Name | Type | Default | Description
 `width` | string | | width của textfield nếu cần
 `fullWidth` | bool | false | full width
 `margin` | string in availableMarginAndPadding | |
+`multiline` | bool | false |
+`rows` | number | | số rows default
+`rowsMax` | number | | số rows max
+
 
 Và các props còn lại của native input
 
@@ -73,8 +77,8 @@ Và các props còn lại của native input
 <EHealthTextField
 	margin="sm"
 	value={this.state.errorTestText}
-	onChange={ev => {
-		this.setState({ errorTestText: ev.target.value });
+	onChange={value => {
+		this.setState({ errorTestText: value });
 	}}
 	error={this.state.errorTestText.includes('1')}
 	errorDescription="Không được gõ số 1"
