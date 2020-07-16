@@ -562,3 +562,62 @@ Name | Type | Default | Description
 	</div>
 </EHealthPanel>
 ```
+#### EHealthTimePicker
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`value` | Date | new Date() |  
+`onChange` | Function |  |  (date)=>{}
+
+
+##### Code
+```jsx
+      const time = new Date();
+       <EHealthTimePicker
+          value={time}
+          onChange={(value) => {
+            this.setState({ time: value });
+          }}
+        />
+```
+
+#### EHeathDatePicker
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`value` | Date | new Date() |  
+`onChange` | Function |  |  (date)=>{}
+
+
+##### Code
+```jsx
+      const date = new Date();
+        <EHeathDatePicker
+          value={date}
+          onChange={(value) => {
+            this.setState({ date: value });
+          }}
+        />
+```
+
+#### EHeathDatePicker
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`value` | Object |  |  
+`onChange` | Function |  |  (date)=>{}
+
+
+##### Code
+```jsx
+	const dateRange = {
+          startDate: addDays(new Date(), 1),
+          endDate: addDays(new Date(), 2),
+      };
+        <EHealthRangeDatePicker
+          value={dateRange}
+          onChange={(value) => {
+            this.setState({ dateRange: value });
+          }}
+        />
+```
