@@ -572,7 +572,7 @@ Name | Type | Default | Description
 
 #### Code
 ```jsx
-      const time = new Date();
+      const time = "07:00:00"
        <EHealthTimePicker
           value={time}
           onChange={(value) => {
@@ -591,7 +591,7 @@ Name | Type | Default | Description
 
 #### Code
 ```jsx
-      const date = new Date();
+      const date = "2020/07/17 07:00:00"
         <EHeathDatePicker
           value={date}
           onChange={(value) => {
