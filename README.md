@@ -562,15 +562,15 @@ Name | Type | Default | Description
 	</div>
 </EHealthPanel>
 ```
-#### EHealthTimePicker
-##### Props
+### EHealthTimePicker
+#### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
-`value` | Date | new Date() |  
+`value` | Date | |  chuổi giờ dạng 07:00:00
 `onChange` | Function |  |  (date)=>{}
 
 
-##### Code
+#### Code
 ```jsx
       const time = new Date();
        <EHealthTimePicker
@@ -581,15 +581,15 @@ Name | Type | Default | Description
         />
 ```
 
-#### EHeathDatePicker
-##### Props
+### EHeathDatePicker
+#### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
-`value` | Date | new Date() |  
+`value` | string |  |  chuổi ngày dạng 2020/07/17 07:00:00
 `onChange` | Function |  |  (date)=>{}
 
 
-##### Code
+#### Code
 ```jsx
       const date = new Date();
         <EHeathDatePicker
@@ -600,19 +600,19 @@ Name | Type | Default | Description
         />
 ```
 
-#### EHeathDatePicker
-##### Props
+### EHeathDateTimePicker
+#### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
-`value` | Object |  |  
+`value` | object |  | 
 `onChange` | Function |  |  (date)=>{}
 
 
-##### Code
+#### Code
 ```jsx
 	const dateRange = {
-          startDate: addDays(new Date(), 1),
-          endDate: addDays(new Date(), 2),
+          startDate: "2020/07/17 07:00:00"
+          endDate: "2020/07/18 07:00:00"
       };
         <EHealthRangeDatePicker
           value={dateRange}
