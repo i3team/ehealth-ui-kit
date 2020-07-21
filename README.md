@@ -568,6 +568,8 @@ Name | Type | Default | Description
 :--- | :--- | :--- | :---
 `value` | Date | |  chuổi giờ dạng 07:00:00
 `onChange` | Function |  |  (date)=>{}
+`switchToMinuteOnHourSelect` | Boolean | false |  Chuyển sang chọn phút sau khi chọn giờ
+`closeOnMinuteSelect` | Boolean | false |  Tắt sau khi chọn phút
 
 
 #### Code
