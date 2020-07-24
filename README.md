@@ -606,20 +606,25 @@ Name | Type | Default | Description
 #### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
-`value` | object |  | 
-`onChange` | Function |  |  (date)=>{}
+`startDate` | string |  | "2020/07/17 07:00:00"
+`endDate` | string |  |  "2020/07/18 07:00:00"
+`onChangeStartDate` | Function |  | (startDate)=>{}
+`onChangeEndDate` | Function |  |  (endDate)=>{}
 
 
 #### Code
 ```jsx
-	const dateRange = {
-          startDate: "2020/07/17 07:00:00"
-          endDate: "2020/07/18 07:00:00"
-      };
-        <EHealthRangeDatePicker
-          value={dateRange}
-          onChange={(value) => {
-            this.setState({ dateRange: value });
+         const startDate = "2020/07/17 07:00:00";
+         const endDate = "2020/07/18 07:00:00";
+      
+        <EHealthDateRangePicker
+          startDate={startDate}
+          endDate={endDate}
+          onChangeEndDate={(value) => {
+            this.setState({ endDate: value });
+          }}
+          onChangeStartDate={(value) => {
+            this.setState({ startDate: value });
           }}
         />
 ```
