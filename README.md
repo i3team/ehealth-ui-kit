@@ -56,9 +56,9 @@ Name | Type | Default | Description
 `multiline` | bool | false |
 `rows` | number | | số rows default
 `rowsMax` | number | | số rows max
-'startAdornment' | any | | 
-'endAdornment' | any | | 
-'numberControl' | Boolean | true | Nút tăng giảm giá trị, áp dụng cho type number
+`startAdornment` | any | | 
+`endAdornment` | any | | 
+`numberControl` | Boolean | true | Nút tăng giảm giá trị, áp dụng cho type number
 
 
 Và các props còn lại của native input
