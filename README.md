@@ -28,6 +28,7 @@ Name | Type | Default | Description
 `iconClassName` | string fontawesome | | icon
 `width` | string | | width của button
 `iconPosition` | "left" or "right" | "left" | icon nằm bên trái hay phải
+`size` | string | "md" or "sm" | "md" | size cuar icon
 
 Và các props còn lại của native button
 
