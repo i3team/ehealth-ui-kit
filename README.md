@@ -610,25 +610,33 @@ Name | Type | Default | Description
 #### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
-`startDate` | string |  | "2020/07/17 07:00:00"
-`endDate` | string |  |  "2020/07/18 07:00:00"
+`value` | object |  | {startDate:"2020/07/17 07:00:00", endDate:"2020/07/18 07:00:00"}
 `onChangeStartDate` | Function |  | (startDate)=>{}
 `onChangeEndDate` | Function |  |  (endDate)=>{}
-
+`onChange` | Function |  | (value)=>{}, thực hiện khi nhập vào input hoặc chọn rang date
+`width` | string | | chiều rộng của text field
+`margin` | Array or string | | margin của text field
+`inputFormat` | string | "yyyy-MM-DD hh:mm:ss" | format của string ngày tháng truyền vào 
+`displayFormat` | Array or string | "DD/MM/yyyy" | format của string hiển thị trên text field
+`endDateProps` | Object | | các props truyền cho component EndDate (tham khảo DatePicker Mui)
+`startDateProps` | Object | | các props truyền cho component StartDate (tham khảo DatePicker Mui)
+`hasStaticRange` | Boolean | true | Có staticRange hay không
+`startDateProps` | Object | |  staticRange : {label:"", value: (value)=>value, selected: (selectedIndex)=>true/false}
 
 #### Code
 ```jsx
-         const startDate = "2020/07/17 07:00:00";
-         const endDate = "2020/07/18 07:00:00";
-      
+         const value ={
+	 		startDate: "2020/07/17 07:00:00",
+	 		endDate: "2020/07/18 07:00:00"
+		};      
         <EHealthDateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          onChangeEndDate={(value) => {
-            this.setState({ endDate: value });
-          }}
-          onChangeStartDate={(value) => {
-            this.setState({ startDate: value });
-          }}
+		value={value}
+          	onChangeEndDate={(value) => {
+            		this.setState({ endDate: value });
+          	}}
+          	onChangeStartDate={(value) => {
+            		this.setState({ startDate: value });
+          	}}
+	  	onChange={(value)=>{this._onChange(value)}}
         />
 ```
