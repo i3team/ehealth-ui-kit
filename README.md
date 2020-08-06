@@ -13,7 +13,7 @@
 - [EHealthSwitch](#switch)
 - [TimelineItem/TimelineItemBody](#timeline)
 - [EHealthPanel](#ehealth-panel)
-- [UploadFiles](#upload-files)
+- [EHealthUploadFiles](#upload-files)
 
 Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
 Các component của prop là `options` thì mặc định, `options` là `array` của object có shape là `{label, value}`
@@ -643,7 +643,7 @@ Name | Type | Default | Description
 ```
 <a name="upload-files" />
 
-### UploadFiles
+### EHealthUploadFiles
 #### Props
 
 Name | Type | Default | Description | IsRequired
@@ -651,7 +651,7 @@ Name | Type | Default | Description | IsRequired
 `multiple` | bool | false | cho phép upload nhiều files 1 lần |
 `accept` | string |  |  loại file được upload (xem html thuần) |
 `onUploaded` | func |  | hàm callback sau khi upload xong, param trả ra là object hay list tùy thuộc vào giá trị của multiple | Yes
-`renderFunction` | object |  | component render thay thế cho input mặc định của html, khi click vào component này sẽ mở hộp thoại chọn file |
+`renderComponent` | object |  | component render thay thế cho input mặc định của html, khi click vào component này sẽ mở hộp thoại chọn file |
 
 #### Example
 ```jsx
@@ -664,7 +664,7 @@ _onUploaded = (data) => {
       <UploadFile 
         multiple={true}
         onUploaded={this._onUploaded} 
-        renderFunction={(<div>Upload</div>)}
+        renderComponent={(<div>Upload</div>)}
       />
     );
   }
