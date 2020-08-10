@@ -607,7 +607,7 @@ Name | Type | Default | Description
         />
 ```
 
-### EHeathDateTimePicker
+### EHeathDateRangePicker
 #### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
@@ -623,6 +623,8 @@ Name | Type | Default | Description
 `startDateProps` | Object | | các props truyền cho component StartDate (tham khảo DatePicker Mui)
 `hasStaticRange` | Boolean | true | Có staticRange hay không
 `startDateProps` | Object | |  staticRange : {label:"", value: (value)=>value, selected: (selectedIndex)=>true/false}
+
+Chức năng nhập text tạm thời chưa phát triển.
 
 #### Code
 ```jsx
