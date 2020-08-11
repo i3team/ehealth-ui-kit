@@ -14,6 +14,7 @@
 - [TimelineItem/TimelineItemBody](#timeline)
 - [EHealthPanel](#ehealth-panel)
 - [EHealthUploadFiles](#upload-files)
+- [EHealthCard](#card)
 
 Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
 Các component của prop là `options` thì mặc định, `options` là `array` của object có shape là `{label, value}`
@@ -670,4 +671,22 @@ _onUploaded = (data) => {
       />
     );
   }
+```
+
+<a name="card" />
+
+### EHealthCard
+
+#### Props
+
+Name | Type | Default | Description | IsRequired
+:--- | :--- | :--- | :--- | :---
+`margin` | string | null | clean node margin
+`padding` | string | "lg" | clean node padding
+
+#### Code
+```jsx
+<EHealthCard margin="md">
+	<div>content</div>
+</EHealthCard>
 ```
