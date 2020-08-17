@@ -690,3 +690,22 @@ Name | Type | Default | Description | IsRequired
 	<div>content</div>
 </EHealthCard>
 ```
+
+### IconInformation
+#### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`iconClassName` | string | `far fa-info-circle` | classname font-awesome
+`iconColor` | string | `grey3` | màu của icon
+`iconHoverColor` | string | `grey5` | màu icon khi hover
+`text` | string | | nội dung khi hover vao icon
+`placement` | string | `right` | vị trí của đoạn text khi hover so với icon
+`margin` | string | `sm` | margin của icon so với các thành phần khác
+
+#### Code
+```jsx
+      <IconInformation
+            iconColor="red"
+            text="Hello, i'm IconInformation."
+          />
+```
