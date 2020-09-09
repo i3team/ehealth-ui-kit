@@ -171,6 +171,7 @@ Name | Type | Default | Description
 `value` | array or object | | array nếu multiple, ngược lại
 `noOptionText` | string | `"No options"` | text display khi không có options
 `margin` | | | 
+`autoUpdate` | bool | false | Tự động update lên value , `onChange` sẽ trở thành callback sau khi đã update
 
 ##### Code
 ```jsx
@@ -186,13 +187,22 @@ import Dropdown from "~/components/ui-kit/dropdown/EHealthSelect";
 	label="Select multiple"
 	multiple
 />
+
+<Dropdown
+	placeholder="Select ..."
+	margin="sm"
+	options={options}
+	value={options.filter(opt => testValues.some(i => opt.value == i))}
+	autoUpdate // ko cần on Change
+	label="Select multiple"
+	multiple
+/>
 ```
 
 #### AsyncDropdown - sử dụng để select query từ back-end
 ##### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
-`getValue` | function | | lấy value cho select dựa vào options, xem VD dưới
 `getInit` | boolean | `false` | `true` nếu cần lấy sẵn options 
 `apiUrl`* | string | | api query options từ back-end, được nối vào với searchValue, xem VD dưới
 `extractOptionsFromApi`* | function | | Trích xuất options từ `ack`, xem VD dưới
@@ -207,9 +217,10 @@ import AsyncDropdown from "~/components/ui-kit/dropdown/AsyncDropdown";
 	margin="sm"
 	apiUrl="/api/Doctor/GetCLSOptions?searchValue="
 	extractOptionsFromApi={ack => ack.data.items}
-	getValue={options => options.filter(opt => testValues.some(i => opt.value == i))}
+	value={this.props.data.testValues}
+	getValue={testValues}
 	onChange={values => {
-		this.overwriteList(this.props.data.testValues, values.map(i => i.value))
+		this.overwriteList(this.props.data.testValues, values)
 	}}
 	label="Select multiple"
 	multiple
