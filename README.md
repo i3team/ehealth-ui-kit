@@ -172,6 +172,8 @@ Name | Type | Default | Description
 `noOptionText` | string | `"No options"` | text display khi không có options
 `margin` | | | 
 `autoUpdate` | bool | false | Tự động update lên value , `onChange` sẽ trở thành callback sau khi đã update
+`variant` | "button" or "textField" | "button" | 
+`renderTags` | bool | false | render tags lên trên button dropdown (chỉ work ở variant là "textField")
 
 ##### Code
 ```jsx
