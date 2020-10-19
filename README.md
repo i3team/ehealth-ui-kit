@@ -621,40 +621,44 @@ Name | Type | Default | Description
         />
 ```
 
-### EHeathDateRangePicker
+### EHealthDateRangePicker
 #### Props
 Name | Type | Default | Description
 :--- | :--- | :--- | :---
-`value` | object |  | {startDate:"2020/07/17 07:00:00", endDate:"2020/07/18 07:00:00"}
-`onChangeStartDate` | Function |  | (startDate)=>{}
-`onChangeEndDate` | Function |  |  (endDate)=>{}
-`onChange` | Function |  | (value)=>{}, thực hiện khi nhập vào input hoặc chọn rang date
-`width` | string | | chiều rộng của text field
-`margin` | Array or string | | margin của text field
-`inputFormat` | string | "yyyy-MM-DD hh:mm:ss" | format của string ngày tháng truyền vào 
-`displayFormat` | Array or string | "DD/MM/yyyy" | format của string hiển thị trên text field
-`endDateProps` | Object | | các props truyền cho component EndDate (tham khảo DatePicker Mui)
-`startDateProps` | Object | | các props truyền cho component StartDate (tham khảo DatePicker Mui)
-`hasStaticRange` | Boolean | true | Có staticRange hay không
-`startDateProps` | Object | |  staticRange : {label:"", value: (value)=>value, selected: (selectedIndex)=>true/false}
+`range` | object |  | {fromDate:"2020/07/17 07:00:00", toDate:"2020/07/18 07:00:00"}
+`margin` | array hoặc string |  | margin của Tag, truyền như I3Div
+`iconClassName` | string | `far fa-calendar-day` | classname của icon
+`hasFixedRange` | bool | `true` | có các lựa chọn số ngày nhanh ko
+`fixedRange` | array | `[1, 3, 5, 7, 14, 30]` | các số ngày chọn nhanh mặc định,
+`clearabble` | bool | `true` | Có button xóa raneg về null ko
+`disabled` | bool | false |
+`inputFormat` | string | `YYYY-MM-DD HH:mm:ss` | Chuổi định dạng ngày đầu vào
+`displayFormat` | string | `YYYY-MM-DD HH:mm:ss` | Chuổi định dạng ngày hiển thị
+`closeAfterSubmit` | bool | `true` | close popover chọn khoảng ngày sau khi submit
+`closeAfterSubmit` | bool | `true` | close popover chọn khoảng ngày sau khi submit
+`selectToDateFirst` | bool | `true` | Chọn ngày kết thúc đầu tiền
+`minDate` | bool | | ngày nhỏ nhất
+`maxDate` | bool | | ngày lớn nhất
+`disablePast` | bool | `false` | Disabled các ngày trogn quá khứ
+`disableFuture` | bool | `false` | Disabled các ngày trong tương lai
+  `singleMonthStep` | bool| `false` | Chỉ tăng giảm 1 tháng khi bấm nút chuyển tháng. Mặc định là tăng giảm 2 tháng
 
 Chức năng nhập text tạm thời chưa phát triển.
 
 #### Code
 ```jsx
-         const value ={
-	 		startDate: "2020/07/17 07:00:00",
-	 		endDate: "2020/07/18 07:00:00"
+         const range ={
+	 		fromDate: "2020/07/1 07:00:00",
+	 		toDate: "2020/07/18 07:00:00"
 		};      
         <EHealthDateRangePicker
-		value={value}
-          	onChangeEndDate={(value) => {
-            		this.setState({ endDate: value });
-          	}}
-          	onChangeStartDate={(value) => {
-            		this.setState({ startDate: value });
-          	}}
-	  	onChange={(value)=>{this._onChange(value)}}
+          range={range} 
+	  onChange={(range) => {
+            this.setState({ range: range });
+          }}
+          label="Ngày cho thuốc"
+          selectToDateFirst
+          singleMonthStep
         />
 ```
 <a name="upload-files" />
