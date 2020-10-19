@@ -653,7 +653,9 @@ Name | Type | Default | Description
 `maxDate` | bool | | ngày lớn nhất
 `disablePast` | bool | `false` | Disabled các ngày trogn quá khứ
 `disableFuture` | bool | `false` | Disabled các ngày trong tương lai
-  `singleMonthStep` | bool| `false` | Chỉ tăng giảm 1 tháng khi bấm nút chuyển tháng. Mặc định là tăng giảm 2 tháng
+`singleMonthStep` | bool| `false` | Chỉ tăng giảm 1 tháng khi bấm nút chuyển tháng. Mặc định là tăng giảm 2 tháng
+`selectFromDate` | bool | `false` | Chỉ chọn ngày bắt đầu
+`selectToDate` | bool| `false` | Chỉ chọn ngày kết thúc
 
 Chức năng nhập text tạm thời chưa phát triển.
 
