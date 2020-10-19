@@ -15,7 +15,9 @@
 - [EHealthPanel](#ehealth-panel)
 - [EHealthUploadFiles](#upload-files)
 - [EHealthCard](#card)
-- [EHealthDateRangePicker](#card)
+- [EHealthDateRangePicker](#ehealth-date-range-picker)
+- [EHealthDatePicker](#ehealth-date-picker)
+- [EHealthTimePicker](#ehealth-time-picker)
 
 Hầu hết các UI Kit đều có prop là `margin`, cách dùng như dùng trên `I3Component`
 Các component của prop là `options` thì mặc định, `options` là `array` của object có shape là `{label, value}`
@@ -582,6 +584,9 @@ Name | Type | Default | Description
 	</div>
 </EHealthPanel>
 ```
+
+
+<a name="ehealth-time-picker"/>
 ### EHealthTimePicker
 #### Props
 Name | Type | Default | Description
@@ -602,7 +607,7 @@ Name | Type | Default | Description
           }}
         />
 ```
-
+<a name="ehealth-date-picker"/>
 ### EHeathDatePicker
 #### Props
 Name | Type | Default | Description
@@ -621,7 +626,7 @@ Name | Type | Default | Description
           }}
         />
 ```
-
+<a name="ehealth-date-range-picker"/>
 ### EHealthDateRangePicker
 #### Props
 Name | Type | Default | Description
