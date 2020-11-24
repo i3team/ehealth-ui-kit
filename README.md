@@ -2,6 +2,7 @@
 
 ### Danh sách
 - [EHealthButton](#ehealth-button)
+- [EHealthAjaxButton](#ehealth-ajax-button)
 - [EHealthTextField](#ehealth-textfield)
 - [Searchbox](#searchbox)
 - [Tag](#tag)
@@ -34,6 +35,8 @@ Name | Type | Default | Description
 `width` | string | | width của button
 `iconPosition` | "left" or "right" | "left" | icon nằm bên trái hay phải
 `size` | string | "md" or "sm" | "md" | size cuar icon
+`progressive` | boolean | false | nếu true thì sẽ có hiệu hứng "loading" khi click, khi đó onClick sẽ nhận thêm parameter thứ 2 là finishCallback
+`text` | string |  | Tương tự children
 
 Và các props còn lại của native button
 
@@ -41,8 +44,44 @@ Và các props còn lại của native button
 ```jsx
 <EHealthButton margin="sm" variant="outlined" iconClassName="fas fa-ambulance">
     Xuất viện
-</EHealthButton>
+</EHealthButton
+<EhealthButton
+    text="Test button"
+    variant="outlined"
+    progressive
+    onClick={(e, finish) => {
+    	// code here
+	finish(); // để kết thúc "loading"
+    }}
+/>
 ```
+
+
+<a name="ehealth-ajax-button"/>
+
+### EHealthAjaxButton
+##### Props
+Name | Type | Default | Description
+:--- | :--- | :--- | :---
+`ajaxMethod` | "post" or "get" | | Kiểu button
+`ajaxOptions` | | | options của ajax (BasePage)
+Và các props còn lại của `EHealthButton` (trừ props `onClick` và `progressive` đã bị override)
+
+##### Code
+```jsx
+<EhealthAjaxButton
+    text="Test ajax button"
+    variant="outlined"
+    ajaxMethod='get'
+    ajaxOptions={{
+        url: '/api/Ehealth/TestAjaxButton',
+        success: ack => {
+            console.log(ack);
+        }
+    }}
+/>
+```
+
 <a name="ehealth-textfield"/>
 
 ### EHealthTextField
